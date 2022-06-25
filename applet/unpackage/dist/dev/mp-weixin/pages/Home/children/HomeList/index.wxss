@@ -1,0 +1,31 @@
+.homeList.data-v-67a9d279 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 5rpx solid #d4d2d2;
+  box-sizing: border-box;
+}
+.homeList .left.data-v-67a9d279 {
+  flex: 2;
+}
+.homeList .left .title.data-v-67a9d279 {
+  padding: 20rpx 0 40rpx;
+  color: #000;
+}
+.homeList .left .date.data-v-67a9d279 {
+  position: absolute;
+  bottom: 0;
+  left: 10rpx;
+  font-size: 10px;
+  color: #333;
+}
+.homeList .right.data-v-67a9d279 {
+  flex: 1;
+  line-height: 100%;
+}
+.homeList .right ._img.data-v-67a9d279 {
+  width: 300rpx;
+  height: 200rpx;
+}
+

@@ -1,9 +1,37 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
 		{
-			"path": "pages/index/index",
+			"path":"pages/Discussion/index",
+			"style":{
+				"navigationBarTitleText":"讨论区"
+			}
+		},
+		{
+			"path": "pages/Home/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/index2/index",
+			"style": {
+				"navigationBarTitleText": "2"
+			}
+		},
+		{
+			"path": "pages/index3/index",
+			"style": {
+				"navigationBarTitleText": "3"
+			}
+		},
+		{
+			"path": "pages/Home/children/DetaiList/index",
+			"style": {
+				"navigationBarTitleText": "详情"
 			}
 		}
 	],
@@ -11,6 +39,31 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"backgroundTextStyle": "dark"
+	},
+	"tabBar": {
+		"color": "#000000",
+		"selectedColor": "#d4237a",
+		"list": [
+			{
+				"text": "首页",
+				"pagePath": "pages/Home/index",
+				"iconPath": "static/icon/home.png",
+				"selectedIconPath": "static/icon/home-active.png"
+			},
+			{
+				"text": "讨论区",
+				"pagePath": "pages/Discussion/index",
+				"iconPath": "static/icon/discussion.png",
+				"selectedIconPath": "static/icon/discussion-active.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/index2/index",
+				"iconPath": "static/icon/my.png",
+				"selectedIconPath": "static/icon/my-active.png"
+			}
+		]
 	}
 }

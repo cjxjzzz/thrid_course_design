@@ -1,14 +1,42 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/Discussion/index",
+    "pages/Home/index",
+    "pages/index2/index",
+    "pages/index3/index",
+    "pages/Home/children/DetaiList/index"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "backgroundTextStyle": "dark"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d4237a",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/Home/index",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-active.png"
+      },
+      {
+        "text": "讨论区",
+        "pagePath": "pages/Discussion/index",
+        "iconPath": "static/icon/discussion.png",
+        "selectedIconPath": "static/icon/discussion-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/index2/index",
+        "iconPath": "static/icon/my.png",
+        "selectedIconPath": "static/icon/my-active.png"
+      }
+    ]
+  },
+  "usingComponents": {}
 }

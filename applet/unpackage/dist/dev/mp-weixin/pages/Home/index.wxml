@@ -1,0 +1,1 @@
+<view class="content"><block wx:for="{{contentList}}" wx:for-item="content" wx:for-index="index" wx:key="index"><home-list vue-id="{{'e217c72a-1-'+index}}" content="{{content}}" bind:__l="__l"></home-list></block></view>
