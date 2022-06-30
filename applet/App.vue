@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss">
 @import "@/uni_modules/uview-ui/index.scss";
+@import "@/static/css/iconfont.css";
 /*每个页面公共css */
 *{
 	margin: 0;

@@ -10,23 +10,9 @@
 
 <body>
   <script>
-    let time = new Date("2022-05-10 10:54:00");
-    let nowTime = new Date();
-    let formateTime = nowTime.getTime() - time.getTime();
-    let hour = formateTime / 1000 / 60 / 60 % 24; // 当前新闻发布的小时数量
-    let day = formateTime / 1000 / 60 / 60 / 24; // 当前新闻发布的天数数量
-    let month = formateTime / 1000 / 60 / 60 / 24 / 30; // 当前新闻发布的月数数量
-    let year = formateTime / 1000 / 60 / 60 / 24 / 365; // 当前新闻发布的年数数量
-    console.log(hour, day,month,year);
-    if (day < 1) {
-      console.log(`${Number.parseInt(hour)}小时前`);
-    } else if(month < 1){
-      console.log(`${Number.parseInt(day)}天前`);
-    }else if(year < 1){
-      console.log(`${Number.parseInt(month)}月前`);
-    }else{
-      console.log(`${Number.parseInt(year)}年前`);
-    }
+    var str = '1、和加速度和环境，\r\n2、技术的进步是否，\r\n3、讲述的就是不对'
+    str.replace(/\\r\\n/g, '<br/>')
+    
   </script>
 </body>
 

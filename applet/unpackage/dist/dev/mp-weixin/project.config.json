@@ -33,8 +33,8 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.24.4",
-  "appid": "touristappid",
+  "libVersion": "2.24.7",
+  "appid": "wx21e4e7ee45fd13f6",
   "projectname": "applet",
   "condition": {},
   "editorSetting": {

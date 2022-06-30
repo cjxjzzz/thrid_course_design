@@ -1,17 +1,17 @@
 <!-- home的list -->
 <template>
-  <view class="homeList" @click="goToDetail">
-    <view class="left">
-      <view class="title">{{ content.title }}</view>
-      <view class="date">
-        {{ content.source }}
-        {{ content.pubDate | formateDate }}
+  <view>
+    <view class="line"></view>
+    <view class="homeList" @click="goToDetail">
+      <img src="/static/blue.png" alt="" class="round" />
+      <view class="pubDate">{{ content.pubDate }}</view>
+      <view class="description" v-if="content.desc">
+        {{content.desc}}
+      </view>
+      <view class="title" v-else>
+        {{content.title}}
       </view>
     </view>
-    <view class="right" v-show="content.img">
-      <img :src="content.img" alt="" />
-    </view>
-    <!-- <u-icon name="level"></u-icon> -->
   </view>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   methods: {
     // 进入详情页面
     goToDetail() {
-      console.log("进入详情页");
+      // console.log("进入详情页");
       uni.navigateTo({
         url: "/pages/Home/children/DetaiList/index",
         animationType: "pop-in",
@@ -73,35 +73,44 @@ export default {
 };
 </script>
 <style lang='less' scoped>
+.line {
+  border-bottom: 1px solid #eaeaea;
+}
 .homeList {
   position: relative;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  border-bottom: 5rpx solid rgb(212, 210, 210);
-  // background: pink;
-  box-sizing: border-box;
-  .left {
-    flex: 2;
-    .title {
-      padding: 20rpx 0 40rpx;
-      color: #000;
-    }
-    .date {
-      position: absolute;
-      bottom: 0;
-      left: 10rpx;
-      font-size: 10px;
-      color: #333;
-    }
+  margin-top: -30rpx;
+  border: 1px solid #eaeaea;
+  border-bottom: none;
+  border-top: none;
+  .round {
+    position: absolute;
+    top: 10rpx;
+    left: -20rpx;
+    width: 40rpx;
+    height: 40rpx;
   }
-  .right {
-    flex: 1;
-    line-height: 100%;
-    img {
-      width: 300rpx;
-      height: 200rpx;
-    }
+
+  .pubDate {
+    position: absolute;
+    width: 95%;
+    padding: 20rpx 0;
+    left: 5%;
+    top: 0rpx;
+    color: #004a94;
+    font-size: 18px;
+    font-weight: bolder;
+    background: #f0f0f0;
+  }
+
+  .description,
+  .title {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 100rpx 5% 60rpx;
+    line-height: 200%;
+    white-space: pre-wrap; // 设置\n换行
   }
 }
 </style>

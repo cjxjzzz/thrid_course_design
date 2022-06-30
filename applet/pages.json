@@ -4,9 +4,9 @@
 	},
 	"pages": [
 		{
-			"path":"pages/Discussion/index",
-			"style":{
-				"navigationBarTitleText":"讨论区"
+			"path": "pages/Discussion/children/AddNews/index",
+			"style": {
+				"navigationBarTitleText": "添加新闻"
 			}
 		},
 		{
@@ -17,15 +17,16 @@
 			}
 		},
 		{
-			"path": "pages/index2/index",
-			"style": {
-				"navigationBarTitleText": "2"
+			"path":"pages/Discussion/index",
+			"style":{
+				"navigationBarTitleText":"讨论区",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
-			"path": "pages/index3/index",
+			"path": "pages/Mine/index",
 			"style": {
-				"navigationBarTitleText": "3"
+				"navigationBarTitleText": "我的"
 			}
 		},
 		{
@@ -60,7 +61,7 @@
 			},
 			{
 				"text": "我的",
-				"pagePath": "pages/index2/index",
+				"pagePath": "pages/Mine/index",
 				"iconPath": "static/icon/my.png",
 				"selectedIconPath": "static/icon/my-active.png"
 			}

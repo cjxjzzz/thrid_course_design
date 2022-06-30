@@ -2,6 +2,8 @@
   "navigationBarTitleText": "首页",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "home-list": "/pages/Home/children/HomeList/index"
+    "u-loading-icon": "/uni_modules/uview-ui/components/u-loading-icon/u-loading-icon",
+    "home-list": "/pages/Home/children/HomeList/index",
+    "pg-actionsheet": "/components/pg-actionsheet/index"
   }
 }

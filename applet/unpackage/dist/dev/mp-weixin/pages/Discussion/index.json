@@ -1,4 +1,9 @@
 {
   "navigationBarTitleText": "讨论区",
-  "usingComponents": {}
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u--input": "/uni_modules/uview-ui/components/u--input/u--input",
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "home-list": "/pages/Discussion/children/HomeList/index"
+  }
 }
