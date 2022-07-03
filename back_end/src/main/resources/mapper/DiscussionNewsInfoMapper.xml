@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cjxj.back_end.mapper.DiscussionNewsInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cjxj.back_end.entity.DiscussionNewsInfo">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="pub_date" property="pubDate" />
+        <result column="description" property="description" />
+        <result column="creator" property="creator" />
+        <result column="image_urls" property="imageUrls" />
+        <result column="video_urls" property="videoUrls" />
+        <result column="likes" property="likes" />
+        <result column="collects" property="collects" />
+        <result column="status" property="status" />
+        <result column="deal_with_information" property="dealWithInformation" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, title, pub_date, description, creator, image_urls, video_urls, likes, collect, status, deal_with_information
+    </sql>
+
+    <!--  获取信息  -->
+    <select id="getDiscussionNewsInfo" resultType="com.cjxj.back_end.entity.DiscussionNewsInfo">
+        select * from discussion_news_info;
+    </select>
+
+    <!--  添加信息  -->
+    <insert id="addDiscussionNewsInfo">
+        insert into discussion_news_info
+        (id, title, pub_date, description, creator, image_urls, video_urls, likes, collects, status)
+        values
+        (#{id}, #{title}, #{pubDate}, #{description}, #{creator}, #{imageUrls}, #{videoUrls}, #{likes}, #{collects}, #{status})
+    </insert>
+
+    <update id="agreeDiscussionNewsInfo">
+        update discussion_news_info
+        set
+        status = "已通过"
+        where
+        id = #{id}
+    </update>
+
+    <update id="rejectDiscussionNewsInfo">
+        update discussion_news_info
+        set
+            deal_with_information = #{dealWithInformation},
+            status = "驳回中"
+        where
+            id = #{id}
+    </update>
+
+    <select id="searchDiscussionNewsInfo" resultType="com.cjxj.back_end.entity.DiscussionNewsInfo">
+        select * from discussion_news_info where title like #{keyword}
+    </select>
+
+    <update id="updateDiscussionNewsInfo">
+        update discussion_news_info
+        set
+            title = #{title},
+            description = #{description},
+            image_urls = #{imageUrls},
+            video_urls = #{videoUrls},
+            likes = #{likes},
+            collects = #{collects},
+            status = #{status}
+        where
+            id = #{id}
+    </update>
+
+    <select id="getInfoById" resultType="com.cjxj.back_end.entity.DiscussionNewsInfo">
+        select * from discussion_news_info where id = #{id}
+    </select>
+</mapper>

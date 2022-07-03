@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cjxj.back_end.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cjxj.back_end.entity.User">
+        <id column="id" property="id" />
+        <result column="open_id" property="openId" />
+        <result column="privilege" property="privilege" />
+        <result column="likes" property="likes" />
+        <result column="collects" property="collects" />
+        <result column="pending_news" property="pendingNews" />
+        <result column="fulfilled_news" property="fulfilledNews" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, open_id, privilege, likes, collects, pending_news, fulfilled_news
+    </sql>
+    
+    <select id="getUserInfo" resultType="com.cjxj.back_end.entity.User">
+        select * from user where open_id = #{openId}
+    </select>
+
+    <insert id="addUser">
+        insert into user
+        (id, open_id, privilege, likes, collects, pending_news, fulfilled_news)
+        values
+        (#{id},#{openId},#{privilege},#{likes},#{collects},#{pendingNews},#{fulfilledNews})
+    </insert>
+
+    <update id="updateUser">
+        update user
+        set
+        open_id = #{openId},
+        privilege = #{privilege},
+        likes = #{likes},
+        collects = #{collects},
+        pending_news = #{pendingNews},
+        fulfilled_news = #{fulfilledNews}
+    </update>
+
+</mapper>
